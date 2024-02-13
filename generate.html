@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Link</title>
+</head>
+<body>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter your name">
+
+  <label for="age">Age:</label>
+  <input type="text" id="age" placeholder="Enter your age">
+
+  <button onclick="generateLink()">Generate</button>
+
+  <p id="generatedLink"></p>
+
+  <script>
+    function generateLink() {
+      const nameInput = document.getElementById('name').value;
+      const ageInput = document.getElementById('age').value;
+
+      // Create a link based on the entered name and age
+      const generatedLink = `${window.location.href}${nameInput}${ageInput}`;
+      
+      // Display the generated link
+      document.getElementById('generatedLink').innerHTML = `<strong>Generated Link:</strong> <a href="${generatedLink}" target="_blank">${generatedLink}</a>`;
+    }
+  </script>
+
+</body>
+</html>
